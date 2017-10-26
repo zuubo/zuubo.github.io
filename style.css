@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+  font-size: 500%;
+}
+
+p {
+  margin: auto;
+  line-height: 1.6;
+}
+
+body {
+  background: linear-gradient(to bottom right, #F05F57, #360940);
+}
+
+.helvetica {
+  font-family: helvetica;
+  color: white;
+}
