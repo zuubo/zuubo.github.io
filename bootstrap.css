@@ -12,6 +12,19 @@ html {
 body {
   margin: 0;
 }
+
+/*body, html {
+  height: 100%;
+}
+
+.bg {
+  background-image: url("http://78.media.tumblr.com/d9cca9f1c7112978ce3f72234d98492c/tumblr_mrar3tSS6p1sot5nio1_1280.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+
 article,
 aside,
 details,
