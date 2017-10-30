@@ -1,11 +1,39 @@
-img {
-  width: 30%;
-  float: left;
-  margin: 1.66%;
-}
+/*img {*/
+/*  width: 30%;*/
+/*  float: left;*/
+/*  margin: 1.66%;*/
+/*}*/
 
 body{
-  background: rgb(250,250,250);
+  padding-top: 70px;
+  background: rgb(245,245,245);
+}
+
+.thumbnail {
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.jumbotron {
+  color: #292629;
+  background: white;
+}
+
+/*.jumbotron p {*/
+/*  color: #FAC8C9;*/
+/*}*/
+
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse {
+  color: #292629;
 }
 
 #title {
