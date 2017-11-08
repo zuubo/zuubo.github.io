@@ -1,14 +1,16 @@
 var myName = document.querySelector("#titleName");
 var lis = document.querySelectorAll("li");
+var heelo = document.querySelector("#heelo");
 var counter = 63;
 
 myName.addEventListener("click", function() {
   this.style.fontSize = Number(counter*=1.3) + "px";  
 }); 
-myName.addEventListener("mouseout", function(){
-  counter=63;
-})
 
+heelo.addEventListener("click", function(){
+  counter = 63;
+  myName.style.fontSize = counter + "px";
+})
 
 myName.addEventListener("mouseover", function(){
   this.classList.add("red"); 
