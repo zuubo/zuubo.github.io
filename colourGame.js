@@ -1,6 +1,7 @@
 var numSquares = 6;
 var colours = randomColourGen(numSquares);
-var backgroundColor = "grey";
+var backgroundColor = "#ECF0F1";
+var primaryColor = "#EB4F65";
 
 var h1 = document.querySelector("h1");
 var squares = document.querySelectorAll(".square"); // selects the square divs
@@ -61,7 +62,7 @@ resetBtn.addEventListener("click", function(){
   }
   this.textContent = "New Colours";
   message.textContent ="";
-  h1.style.backgroundColor = "aqua";
+  h1.style.backgroundColor = primaryColor;
 })
 
 // style.background doesnt work properly in firefox so use style.backgroundColor instead
@@ -77,6 +78,7 @@ for (var i = 0; i < squares.length; i++) { //iterating over the square divs
       changeColours(clickedColour);
       resetBtn.textContent = "Play again?";
       h1.style.backgroundColor = pickedColour;
+      document.querySelector("#stripe").style.color = pickedColour;
     }
     else {
       this.style.backgroundColor = backgroundColor;
