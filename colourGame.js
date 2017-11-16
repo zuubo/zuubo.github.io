@@ -1,4 +1,6 @@
-var colours = randomColourGen(6);
+var numSquares = 6;
+var colours = randomColourGen(numSquares);
+var backgroundColor = "grey";
 
 var h1 = document.querySelector("h1");
 var squares = document.querySelectorAll(".square"); // selects the square divs
@@ -8,11 +10,48 @@ var message = document.querySelector("#message"); // says if you win or miss
 
 var resetBtn = document.querySelector("#reset");
 
+var ezMode = document.querySelector("#ezBTN");
+var hrdMode = document.querySelector("#hardBTN");
+
+document.querySelector("body").style.backgroundColor = backgroundColor;
+
+ezMode.addEventListener("click", function() {
+  ezMode.classList.add("selected");
+  hrdMode.classList.remove("selected");  
+  numSquares = 3;
+  colours = randomColourGen(numSquares);
+  pickedColour = pickColour();
+  goalColour.textContent = pickedColour;
+  message.textContent ="";
+  for (var i = 0; i < squares.length; i++) {
+    if (colours[i]){
+    squares[i].style.backgroundColor = colours[i];
+    }
+    else {
+    squares[i].style.display = "none";
+    }
+  }
+})
+
+hrdMode.addEventListener("click", function() {
+  ezMode.classList.remove("selected");
+  hrdMode.classList.add("selected");
+  numSquares = 6;
+  colours = randomColourGen(numSquares);
+  pickedColour = pickColour();
+  goalColour.textContent = pickedColour;
+  message.textContent ="";
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colours[i];
+    squares[i].style.display = "block";
+  }
+})
+
 goalColour.textContent = pickedColour;
 
 resetBtn.addEventListener("click", function(){
   // generate all new colours
-  colours = randomColourGen(6);
+  colours = randomColourGen(numSquares);
   // pick a new goal colour from the array
   pickedColour = pickColour();
   goalColour.textContent = pickedColour;
@@ -20,8 +59,9 @@ resetBtn.addEventListener("click", function(){
   for (var i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = colours[i];
   }
-  
-  h1.style.backgroundColor = "#232323";
+  this.textContent = "New Colours";
+  message.textContent ="";
+  h1.style.backgroundColor = "aqua";
 })
 
 // style.background doesnt work properly in firefox so use style.backgroundColor instead
@@ -39,7 +79,7 @@ for (var i = 0; i < squares.length; i++) { //iterating over the square divs
       h1.style.backgroundColor = pickedColour;
     }
     else {
-      this.style.backgroundColor = "#232323";
+      this.style.backgroundColor = backgroundColor;
       message.textContent = "Try Again!"; // prints try again when wrong colour is clicked
     }
   })
